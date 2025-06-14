@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <h1>GUIA ESTRUCTURAS DE CONTROL JAVASCRIPT - SOFIA CARDONA </h1>
+
+    <h2>EJERCICIO 1</h2>
+    <p>Crear una función que en base a la edad que ingreso el usuario devolver un 
+        mensaje si la persona es mayor de edad o no.</p>
+    <h3>Ingrese su edad</h3>
+    <input type="number" placeholder="Escribe tu edad" id="edadUsuario">
+    <button id="calcularEdad">Calcular Edad</button>
+    <h3 id="answer"></h3>
+
+    <h2>EJERCICIO 2</h2>
+    <p>Crear una función que determine la nota final de un alumno: Examen =20% tareas = 40% asistencia = 10% investigación = 30% </p>
+    <h3>Ingrese Notas:</h3>
+    <input type="text" placeholder="Nombre" id="NombreAlumno"><br><br>
+    <input type="number" placeholder="Carnet" id="Carnet"><br><br>
+    <input type="number" placeholder="Examen" id="Examen"><br><br>
+    <input type="number" placeholder="Tareas" id="Tareas"><br><br>
+    <input type="number" placeholder="Asistencia" id="Asistencia"><br><br>
+    <input type="number" placeholder="Investigacion" id="Investigacion"><br><br>
+    <button id="calcularNota">Calcular Nota Final</button>
+    <p>Promedio Alumno:</p>
+    <h3 id="nombreAlumno"></h3>
+    <h3 id="carnetAlumno"></h3>
+    <h3 id="notaFinal"></h3>
+
+    <h2>EJERCICIO 3</h2>
+    <p>Calcular el aumento de trabajador tomando en cuenta la tabla de categorías de aumento. Para este ejercicio deberá de asignar las siguientes variables: nombre, salario, categoría y aumento </p>
+    <h3>Ingrese Datos del Empleado:</h3>
+    <input type="text" placeholder="Nombre" id="Nombre"><br><br>
+    <input type="number" placeholder="Salario" id="Salario"><br><br>
+    <input type="text" placeholder="Categoria" id="Categoria"><br><br>
+    <button id="calcularAumento">Calcular Aumento</button>
+    <p>Aumento Salarial</p>
+    <p>Nombre:</p><h3 id="nombrePersona"></h3>
+    <p>Nuevo Salario:</p><h3 id="aumentoPersona"></h3>
+    
+    <h2>EJERCICIO 4</h2>
+    <p>Crear una función que en base a 2 números enteros que ingrese el usuario, calcular cual número es el mayor y devolverlo.</p>
+    <h3>Ingrese 2 Valores:</h3>
+    <input type="number" placeholder="Valor A" id="ValorA"><br><br>
+    <input type="number" placeholder="Valor B" id="ValorB"><br><br>
+    <button id="CompValor">Comparar</button>
+    <p>El Numero Mayor es?</p>
+    <p>Resultado:</p><h3 id="AvsB"></h3>
+
+    <h2>EJERCICIO 5</h2>
+    <p> Realizar una función para una tienda de coches en donde se deberá calcular: Si el coche a la venta es un FORD FIESTA, aplicar un 5% de descuento en la compra. 
+        Si el coche a la venta es un FORD FOCUS, el descuento será del 10% y si es un FORD ESCAPE el descuento será del 20%.</p>
+    <h3>Seleccione un Vehiculo:</h3>
+    <label><input type="checkbox" value="Ford Fiesta" id="FordFiesta">Ford Fiesta $7,000</label><br>
+    <label><input type="checkbox" value="Ford Focus" id="FordFocus">Ford Focus $10,000</label><br>
+    <label><input type="checkbox" value="Ford Escape" id="FordEscape">Ford Escape $15,000</label><br><br>
+    <button id="TotalCompra">Calcular Total</button>
+    <p>El Total de su Compra es:</p>
+    <h3 id="TotalVenta"></h3>
+
+<h2>EJERCICIO 6</h2>
+    <p> Si el usuario introduce como origen la ciudad de Palma y como destino La costa del Sol, el 
+descuento será de 5%, si el destino es Panchimalco el descuento será del 10% y si el destino 
+es Puerto el Triunfo el descuento será del 15%.</h3><br>
+<h3>Seleccionar Destino con Origen: "ciudad de Palma"</h3>
+    <label><input type="checkbox" value="costa del Sol" id="CostaSol"> La costa del Sol $100</label><br>
+    <label><input type="checkbox" value="Panchimalco" id="Panchimalco"> Panchimalco $75</label><br>
+    <label><input type="checkbox" value=">Puerto el Triunfo" id="PuertoTriunfo">Puerto el Triunfo $50</label><br><br>
+    <button id="TotalCompraTour">Calcular Total</button>
+    <p>El Total de su Compra es:</p>
+    <h3 id="TotalVentaTour"></h3>
+
+    <h2>EJERCICIO 8</h2>
+    <p>Escriba un programa que muestre la tabla de multiplicar del 1 al 10 del número ingresado 
+      por el usuario. </p>
+    <h3>Ingrese un Numero</h3>
+    <input type="number" placeholder="Escribe un Numero" id="Numero">
+    <button id="CalcularTabla">Calcular</button>
+    <h3 id="answer1"></h3>
+    <h3 id="answer2"></h3>
+    <h3 id="answer3"></h3>
+    <h3 id="answer4"></h3>
+    <h3 id="answer5"></h3>
+    <h3 id="answer6"></h3>
+    <h3 id="answer7"></h3>
+    <h3 id="answer8"></h3>
+    <h3 id="answer9"></h3>
+    <h3 id="answer10"></h3>
+
+    <script src="src/exercises.js"></script>
+  </body>
+
+</html>
