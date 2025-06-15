@@ -75,22 +75,48 @@ es Puerto el Triunfo el descuento será del 15%.</h3><br>
     <p>El Total de su Compra es:</p>
     <h3 id="TotalVentaTour"></h3>
 
+    <h1>Ejercicio 7</h1>
+    <p>Se realiza la carga de 10 valores enteros por teclado.</p>
+    <form id="numberForm">
+        <div id="inputContainer">
+            <input type="number" class="number-input" required>
+        </div><br>
+        <button type="button" id="addInput">Agregar Otro Numero</button>
+        <button type="submit">Calcular</button>
+    </form>
+
+    <div id="results">
+        <h2>Resultados:</h2>
+        <p>Numeros Negativos: <span id="negativeCount">0</span></p>
+        <p>Numeros Positivos: <span id="positiveCount">0</span></p>
+        <p>Multiplos de 15: <span id="multiple15Count">0</span></p>
+        <p>Suma de numeros pares: <span id="evenSum">0</span></p>
+    </div>
+
     <h2>EJERCICIO 8</h2>
     <p>Escriba un programa que muestre la tabla de multiplicar del 1 al 10 del número ingresado 
       por el usuario. </p>
     <h3>Ingrese un Numero</h3>
     <input type="number" placeholder="Escribe un Numero" id="Numero">
     <button id="CalcularTabla">Calcular</button>
-    <h3 id="answer1"></h3>
-    <h3 id="answer2"></h3>
-    <h3 id="answer3"></h3>
-    <h3 id="answer4"></h3>
-    <h3 id="answer5"></h3>
-    <h3 id="answer6"></h3>
-    <h3 id="answer7"></h3>
-    <h3 id="answer8"></h3>
-    <h3 id="answer9"></h3>
-    <h3 id="answer10"></h3>
+    <table>
+      <thead>
+        <th>Valor</th>
+        <th>Tabla</th>
+        <th>Resultado</th>
+    </thead>
+    <tbody id="TableBody"></tbody>
+  </table>
+
+    <h2>EJERCICIO 9</h2>
+    <p>Crear programa donde se introduce una temperatura en Celsius y salga el resultado en
+      Fahrenheit</p>
+    <h3>Ingrese temperatura en Celsius</h3>
+    <input type="number" placeholder="temperatura en Celsius" id="Celsius">
+    <button id="calcularTemp">Calcular temperatura</button>
+    <p>Temperarura en Fahrenheit:</p>
+    <h3 id="Fahrenheit"></h3>
+    <h3 id="Mensaje"></h3>
 
     <script src="src/exercises.js"></script>
   </body>

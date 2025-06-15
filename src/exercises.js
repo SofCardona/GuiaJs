@@ -64,49 +64,29 @@
   let totalTri;
   calcularTourButton.addEventListener("click", calcularTour);
 
+//Ejercicio 7
+const form = document.getElementById('numberForm');
+const addInputBtn = document.getElementById('addInput');
+const inputContainer = document.getElementById('inputContainer');
+let inputCount = 1;
+addInputBtn.addEventListener('click', addInput);
+form.addEventListener('submit', processForm);
+
   //Ejercicio 8
   let numInput = document.getElementById("Numero");
   let calcularTablaButton = document.getElementById("CalcularTabla");
+  let tBody = document.getElementById("TableBody");
   let valueTabla;
-  edadButton.addEventListener("click", calcularTabla);
+  calcularTablaButton.addEventListener("click", calcularTabla);
+
+  //Ejercicio 9
+  let tempInput = document.getElementById("Celsius");
+  let tempButton = document.getElementById("calcularTemp");
+  let temCel;
+  let fareResult;
+  tempButton.addEventListener("click", calcularTemp);
   
 //FUNTIONS 
-
-function calcularTabla()
-{
-  valueTabla = Number(numInput.value);
-  let table1Container = document.getElementById("answer1");
-  let table2Container = document.getElementById("answer2");
-  let table3Container = document.getElementById("answer3");
-  let table4Container = document.getElementById("answer4");
-  let table5Container = document.getElementById("answer5");
-  let table6Container = document.getElementById("answer6");
-  let table7Container = document.getElementById("answer7");
-  let table8Container = document.getElementById("answer8");
-  let table9Container = document.getElementById("answer9");
-  let table10Container = document.getElementById("answer10");
-
-  let answer1 = valueTabla * 1;
-  table1Container.textContent = answer1;
-  let answer2 = valueTabla * 2;
-  table2Container.textContent = answer2;
-  let answer3 = valueTabla * 3;
-  table3Container.textContent = answer3;
-  let answer4 = valueTabla * 4;
-  table4Container.textContent = answer4;
-  let answer5 = valueTabla * 5;
-  table5Container.textContent = answer5;
-  let answer6 = valueTabla * 6;
-  table6Container.textContent = answer6;
-  let answer7 = valueTabla * 7;
-  table7Container.textContent = answer7;
-  let answer8 = valueTabla * 8;
-  table8Container.textContent = answer8;
-  let answer9 = valueTabla * 9;
-  table9Container.textContent = answer9;
-  let answer10 = valueTabla * 10;
-  table10Container.textContent = answer10;
-}
 
 
 //Ejercicio 1
@@ -236,5 +216,102 @@ function calcularTour()
   {
   totalTri = Number(valTri) - Number(valTri)*0.15;
   tourContainer.textContent = totalTri;
+  }
+}
+
+ //Ejercicio 7
+function addInput() {
+  if (inputCount < 10) {
+    const newInput = document.createElement('input');
+    newInput.type = 'number';
+    newInput.className = 'number-input';
+    newInput.required = true;
+    inputContainer.appendChild(newInput);
+    inputCount++;
+  }
+  if (inputCount === 10) {
+    addInputBtn.disabled = true;
+  }
+}
+
+function processForm(e) {
+  e.preventDefault();
+
+  const inputs = document.querySelectorAll('.number-input');
+  const numbers = Array.from(inputs).map(input => parseInt(input.value));
+
+  let negativeCount = 0;
+  let positiveCount = 0;
+  let multiple15Count = 0;
+  let evenSum = 0;
+
+  numbers.forEach(num => {
+    if (num < 0) {
+      negativeCount++;
+    } else if (num > 0) {
+      positiveCount++;
+    }
+
+    if (num % 15 === 0) {
+      multiple15Count++;
+    }
+
+    if (num % 2 === 0) {
+      evenSum += num;
+    }
+  });
+
+  document.getElementById('negativeCount').textContent = negativeCount;
+  document.getElementById('positiveCount').textContent = positiveCount;
+  document.getElementById('multiple15Count').textContent = multiple15Count;
+  document.getElementById('evenSum').textContent = evenSum;
+}
+
+//Ejercio 8
+function calcularTabla()
+{
+  valueTabla = Number(numInput.value);
+  tBody.innerHTML = "";
+ for(let i = 1; i<=10; i++)
+ {
+  let trElement = document.createElement('tr');
+  let tdElemnt1 = document.createElement('td');
+  let tdElemnt2 = document.createElement('td');
+  let tdElemnt3 = document.createElement('td');
+  let result = valueTabla*i;
+  tdElemnt1.textContent = valueTabla;
+  trElement.appendChild(tdElemnt1);
+  tdElemnt2.textContent = i;
+  trElement.appendChild(tdElemnt2);
+  tdElemnt3.textContent = result;
+  trElement.appendChild(tdElemnt3);
+  tBody.appendChild(trElement);
+ }
+}
+
+//Ejercicio 9
+function calcularTemp()
+{
+  temCel = Number(tempInput.value);
+  let farenContainer = document.getElementById("Fahrenheit");
+  let mensaje = document.getElementById("Mensaje");
+  fareResult = (temCel * 9/5) + 32;
+  farenContainer.textContent =fareResult;
+
+  if(fareResult >= 14 && fareResult < 32 )
+  {
+mensaje.textContent = "Temperatura baja";
+  }
+  else if(fareResult >= 32 && fareResult < 68 )
+  {
+mensaje.textContent = "Temperatura adecuada";
+  }
+  else if(fareResult >= 68 && fareResult <= 96 )
+  {
+mensaje.textContent = "Temperatura alta";
+  }
+  else
+  {
+    mensaje.textContent = "Temperatura desconocida";
   }
 }
